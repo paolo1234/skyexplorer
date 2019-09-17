@@ -245,8 +245,9 @@ for(let i=0; i<test.length; i++){
 
 
 }
-
+let clicked = false;
+let Start;
+let End;
 // Al click di una cella
-$('.cella').click((e) => {alert("Hai cliccato sulla casella con id: " + e.target.id)});
-
+$('.cella').click((e) => { if(!clicked){ Start = e.target.id; clicked = true; }else{ End = e.target.id; clicked = false; DrawConn(Start, End, "line"+Start);} alert("Hai cliccato sulla casella con id: " + e.target.id)});
 
